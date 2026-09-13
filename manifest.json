@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Reader",
+  "version": "1.0",
+  "description": "Reads selected text one word at a time with a notes box.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Start Focus Reader"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ]
+}
